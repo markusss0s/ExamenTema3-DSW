@@ -1,0 +1,16 @@
+{
+    "name": "shop/markus",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Shop\\Markus\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Markus",
+            "email": "abramianmedina@gmail.com"
+        }
+    ],
+    "require": {}
+}
