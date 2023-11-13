@@ -11,7 +11,7 @@ abstract class Elements {
   }
 
   
-  public function calcPrice()
+  public function calcBasePrice()
   {
     return $this->basePrice + ($this->basePrice * $this->tax);
   }

@@ -1,8 +1,7 @@
 <?php
+namespace Shop\Markus;
 
-use Markus\Shop\Services;
-
-class ServiciosNormales extends Services{
+class NormalServices extends Services{
   public function __construct($name, $basePrice){ 
     parent::__construct($name, $basePrice);
   }

@@ -29,7 +29,7 @@ class Products extends Elements
   }
 
   public function calcPriceTax(){
-    return parent::calcPrice() + $this->shippingCost();
+    return parent::calcBasePrice() + $this->shippingCost();
   }
   public function __toString()
   {

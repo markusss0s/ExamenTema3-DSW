@@ -1,8 +1,9 @@
 <?php
+namespace Shop\Markus;
+use DateTime;
 
-use Markus\Shop\Services;
 
-class ServiciosMixtos extends Services implements Expired
+class MixedServices extends Services implements Expired
 {
   private $maxDate;
   private $sessions;
@@ -18,11 +19,16 @@ class ServiciosMixtos extends Services implements Expired
     $diff = $date->diff($now);
     return $diff->days;
   }
-
+  public function expired()
+  {
+    $now = new DateTime();
+    $maxDate = new DateTime();
+    return $now > $maxDate;
+  }
   public function elementExpired(){
     if ($this->daysLeft() != null) {
-      if (self::daysLeft() <= 7) return (parent::calcPrice() + ($this->basePrice * 0.20));
-      else if (self::daysLeft() == 1) return (parent::calcPrice() + ($this->basePrice * 0.50));
+      if (self::daysLeft() <= 7) return (parent::calcBasePrice() + ($this->basePrice * 0.20));
+      else if (self::daysLeft() == 1) return (parent::calcBasePrice() + ($this->basePrice * 0.50));
     }
   }
 

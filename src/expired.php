@@ -1,8 +1,8 @@
 <?php
-
+namespace Shop\Markus;
 interface Expired
 {
 
-  public function elementExpired();
+  public function expired();
   public function daysLeft();
 }

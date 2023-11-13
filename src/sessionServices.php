@@ -1,9 +1,8 @@
 <?php
-namespace Shop\Markus\sesiones;
+namespace Shop\Markus;
 
-use Markus\Shop\Services;
-use Servicios;
-class sessionsServices extends Services {
+
+class SessionsServices extends Services {
   public $sessions;
 
   public function __construct($name, $basePrice, $sessions) {

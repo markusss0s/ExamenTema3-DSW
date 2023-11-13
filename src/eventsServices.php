@@ -1,7 +1,8 @@
 <?php
 
-use Markus\Shop\Services;
+namespace Shop\Markus;
 use DateTime;
+
 
 class EventsServices extends Services implements Expired
 {
@@ -12,6 +13,12 @@ class EventsServices extends Services implements Expired
     $this->maxDate = $maxDate;
   }
 
+  public function expired()
+  {
+    $now = new DateTime();
+    $maxDate = new DateTime();
+    return $now > $maxDate;
+  }
   public  function daysLeft()
   {
     $now = new DateTime();
@@ -20,10 +27,10 @@ class EventsServices extends Services implements Expired
     return $diff->days;
   }
 
-  public function elementExpired(){
+  public function calcBasePrice(){
     if ($this->daysLeft() != null) {
-      if (self::daysLeft() <= 7) return (parent::calcPrice() + ($this->basePrice * 0.20));
-      else if (self::daysLeft() == 1) return (parent::calcPrice() + ($this->basePrice * 0.50));
+      if (self::daysLeft() <= 7) return (parent::calcBasePrice() + ($this->basePrice * 0.20));
+      else if (self::daysLeft() == 1) return (parent::calcBasePrice() + ($this->basePrice * 0.50));
     }
   }
 

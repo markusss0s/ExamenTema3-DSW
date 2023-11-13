@@ -1,10 +1,9 @@
 <?php
 
-use Shop\Markus\Products;
-use Shop\Markus\Services;
-use Shop\Markus\Elements;
+namespace Shop\Markus;
 
-class Tienda
+
+class Shop
 {
   public $elements;
   public function addElements($element)
@@ -12,7 +11,7 @@ class Tienda
     $this->elements[] = $element;
   }
 
-  public function showElementos()
+  public function showElements()
   {
     foreach ($this->elements as $e) {
       echo "<p>$e</p>";
@@ -37,7 +36,7 @@ class Tienda
     }
   }
 
-  public function showElementsData()
+  public function showElementsExpirationDate()
   {
     foreach ($this->elements as $e) {
       if (get_class($e) == Expired::class) {
@@ -46,13 +45,12 @@ class Tienda
     }
   }
 
-  // public function showNoExpired()
-  // {
-  //   foreach ($this->elements as $e) {
-  //     if ($element == false) {
-  //       echo "<br>{$element}<br>";
-  //     }
-  //   }
-
-  // }
+  public function showNoExpired()
+  {
+    foreach ($this->elements as $e) {
+      if ($e->expired() == false) {
+        echo "<br>{$e}<br>";
+      }
+    }
+  }
 }
