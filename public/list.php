@@ -4,17 +4,17 @@ require "../vendor/autoload.php";
 require "virtualShop.php";
 
 if (isset($_GET['filter'])) {
-  $filtro = $_GET['filter'];
+  $filter = $_GET['filter'];
 
-  if ($filtro == 'all') {
+  if ($filter == 'all') {
     $shop->showElements();
-  } else if ($filtro == 'products') {
+  } else if ($filter == 'products') {
     $shop->showProducts();
-  } else if ($filtro == 'services') {
+  } else if ($filter == 'services') {
     $shop->showServices();
-  } else if ($filtro == 'expirationDate') {
+  } else if ($filter == 'expirationDate') {
     $shop->showElementsExpirationDate();
-  } else if ($filtro == 'unexpired') {
+  } else if ($filter == 'unexpired') {
     $shop->showNoExpired();
   }
 }

@@ -2,7 +2,6 @@
 
 namespace Shop\Markus;
 
-
 class Shop
 {
   public $elements;

@@ -1,8 +1,5 @@
 <?
 namespace Shop\Markus;
-use DateTime;
-//use Shop\Markus\elementos\Elemento;
-
 
 class Products extends Elements
 {

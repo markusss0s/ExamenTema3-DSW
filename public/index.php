@@ -12,14 +12,11 @@
 <body>
   <h1>Lista: </h1>
   <ul>
-    <li>
-      <a href="list.php?filter=all">Todos los elementos</a>
-    </li>
+    <li><a href="list.php?filter=all">Todos los elementos</a></li>
     <li><a href="list.php?filter=products">Solo los productos</a></li>
     <li><a href="list.php?filter=services">Solo los servicios</a></li>
     <li><a href="list.php?filter=expirationDate">Con fecha de caducidad</a></li>
     <li><a href="list.php?filter=unexpired">Sin fecha de caducidad</a></li>
-
   </ul>
 </body>
 

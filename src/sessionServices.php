@@ -1,7 +1,6 @@
 <?php
 namespace Shop\Markus;
 
-
 class SessionsServices extends Services {
   public $sessions;
 
