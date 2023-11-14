@@ -4,7 +4,7 @@ namespace Shop\Markus;
 
 class Shop
 {
-  public $elements;
+  public $elements = [];
   public function addElements($element)
   {
     $this->elements[] = $element;
@@ -12,44 +12,56 @@ class Shop
 
   public function showElements()
   {
+    $arr = [];
+
     foreach ($this->elements as $e) {
-      echo "<p>$e</p>";
+      $arr[] = $e;
     }
+    return $arr;
   }
 
   public function showProducts()
   {
+    $arr = [];
+
     foreach ($this->elements as $e) {
-      if (get_class($e) == Products::class) {
-        echo "<p>$e</p>";
+      if ( $e instanceof Products) {
+        $arr[] = $e;
       }
     }
+    return $arr;
   }
 
   public function showServices()
   {
+    $arr = [];
     foreach ($this->elements as $e) {
-      if (get_class($e) == Services::class) {
-        echo "<p>$e</p>";
+      if ( $e instanceof Services) {
+        $arr[] = $e;
       }
     }
+    return $arr;
   }
 
   public function showElementsExpirationDate()
   {
+    $arr = [];
     foreach ($this->elements as $e) {
-      if (get_class($e) == Expired::class) {
-        echo "<p>$e</p>";
+      if ( $e instanceof Expired) {
+        $arr[] = $e;
       }
     }
+    return $arr;
   }
 
   public function showNoExpired()
   {
-    foreach ($this->elements as $e) {
+    $arr = [];
+    foreach ($this->showElementsExpirationDate() as $e) {
       if ($e->expired() == false) {
-        echo "<br>{$e}<br>";
+        $arr[] = $e;
       }
     }
+    return $arr;
   }
 }

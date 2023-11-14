@@ -1,4 +1,5 @@
-<?
+<?php
+
 namespace Shop\Markus;
 
 class Products extends Elements
@@ -13,7 +14,6 @@ class Products extends Elements
     $this->creatorName = $creatorName;
     $this->weight = $weight;
     $this->volume = $volume;
-    //$this->fechaCaduc = date_format($this->fechaCaduc,'Y-m-d');
   }
 
   public function shippingCost()
@@ -24,15 +24,14 @@ class Products extends Elements
     }
     return (2 + ($this->weight * 0.0002) + $price);
   }
+  
 
-  public function calcPriceTax(){
+  public function calcPriceTax()
+  {
     return parent::calcBasePrice() + $this->shippingCost();
   }
   public function __toString()
   {
-    return parent::__toString() . "\nPeso: $this->weight \nVolumen: $this->volume \nCoste de envío: ". $this->shippingCost();
+    return parent::__toString() . "<br>Peso: $this->weight <br>Volumen: $this->volume <br>Coste de envío: " . $this->shippingCost();
   }
-  
-
-  
 }

@@ -7,14 +7,23 @@ if (isset($_GET['filter'])) {
   $filter = $_GET['filter'];
 
   if ($filter == 'all') {
-    $shop->showElements();
+    foreach($shop->showElements() as $e) {
+      echo "<br><p>$e</p>";
+    };
   } else if ($filter == 'products') {
-    $shop->showProducts();
+    foreach($shop->showProducts() as $e) {
+      echo "<br><p>$e</p>";
+    };
   } else if ($filter == 'services') {
-    $shop->showServices();
+    foreach($shop->showElements() as $e) {
+      echo "<br><p>$e</p>";
+    };
   } else if ($filter == 'expirationDate') {
-    $shop->showElementsExpirationDate();
-  } else if ($filter == 'unexpired') {
-    $shop->showNoExpired();
+    foreach($shop->showElementsExpirationDate() as $e) {
+      echo "<br><p>$e</p>";
+    };  } else if ($filter == 'unexpired') {
+      foreach($shop->showNoExpired() as $e) {
+        echo "<br><p>$e</p>";
+      };
   }
 }

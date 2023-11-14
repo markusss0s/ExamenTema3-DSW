@@ -10,7 +10,7 @@ class SessionsServices extends Services {
   }
 
   public function consume() {
-    $this->sessions -1;
+    $this->sessions --;
     if ($this->sessions == 0) return true;
   }
 
